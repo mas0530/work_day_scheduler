@@ -4,6 +4,11 @@ $(document).ready(function () {
       // get nearby values
       var value = $(this).siblings('.description').val();
       var time = $(this).parent().attr('id');
+
+      function displayTime() {
+        var rightNow = moment().format('MMM DD, YYYY [at] hh:mm:ss a');
+        timeDisplayEl.text(rightNow);
+      }
   
       // save in localStorage
       localStorage.setItem(time, value);
